@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes Somos — Kovacevic Constructora</title>
+  <meta name="description" content="Conoce la historia y el equipo detrás de Kovacevic Constructora. Más de 20 años construyendo confianza en Santiago, Chile.">
+  <link rel="canonical" href="https://kovacevic.cl/quienes-somos.html">
+  <meta property="og:title" content="Quiénes Somos — Kovacevic Constructora">
+  <meta property="og:description" content="Más de 20 años construyendo casas, remodelaciones y edificios en Santiago con compromiso y calidad.">
+  <meta property="og:url" content="https://kovacevic.cl/quienes-somos.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --charcoal:     #1C1C1E;
+      --charcoal-dark:#0E0E0F;
+      --charcoal-mid: #2A2A2D;
+      --gold:         #C9A84C;
+      --gold-light:   #E0C272;
+      --gold-dark:    #A8882E;
+      --white:        #FFFFFF;
+      --off-white:    #F4EFE6;
+      --warm-grey:    #8E8E93;
+      --border:       rgba(201,168,76,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 2.5rem; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(14,14,15,0.96); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { text-decoration: none; display: flex; align-items: center; }
+    .logo-img { height: 40px; mix-blend-mode: screen; }
+    .nav { display: flex; align-items: center; gap: 2.5rem; }
+    .nav a {
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--gold); }
+    .nav a.active { color: var(--gold); }
+    .nav .btn-cta {
+      background: var(--gold); color: var(--charcoal) !important;
+      padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 600 !important;
+      transition: background 0.2s;
+    }
+    .nav .btn-cta:hover { background: var(--gold-light); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+      background: rgba(14,14,15,0.98); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border); flex-direction: column; padding: 1.5rem 2.5rem; gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--gold); font-weight: 600; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--charcoal);
+      padding: 10rem 2.5rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: 'NOSOTROS';
+      position: absolute; font-family: 'Playfair Display', serif;
+      font-size: 14vw; font-weight: 900; color: rgba(255,255,255,0.02);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      white-space: nowrap; pointer-events: none;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .page-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
+      color: var(--white); margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 600px;
+    }
+
+    /* SECTION UTILS */
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem;
+    }
+    .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.15;
+    }
+    .section-desc { margin-top: 1rem; font-size: 1rem; color: var(--warm-grey); line-height: 1.75; }
+
+    /* HISTORIA */
+    .historia { background: var(--off-white); padding: 6rem 2.5rem; }
+    .historia-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+    .historia-text .section-title { margin-bottom: 1.5rem; }
+    .historia-text p { font-size: 0.95rem; color: #555; line-height: 1.85; margin-bottom: 1.2rem; }
+    .historia-text p:last-child { margin-bottom: 0; }
+    .historia-aside { }
+    .historia-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .historia-stat {
+      background: var(--charcoal); padding: 2rem 1.8rem;
+    }
+    .historia-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .historia-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+    /* VALORES */
+    .valores { background: var(--charcoal); padding: 6rem 2.5rem; }
+    .valores-inner { max-width: 1200px; margin: 0 auto; }
+    .valores-header { margin-bottom: 3.5rem; }
+    .valores-header .section-title { color: var(--white); }
+    .valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .valor-card {
+      padding: 2.2rem; border: 1px solid var(--border); border-radius: 2px;
+      transition: border-color 0.3s;
+    }
+    .valor-card:hover { border-color: var(--gold); }
+    .valor-icon {
+      width: 40px; height: 40px; color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .valor-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 0.7rem;
+    }
+    .valor-card p { font-size: 0.87rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+    /* FORMA DE TRABAJAR */
+    .forma { background: var(--off-white); padding: 6rem 2.5rem; }
+    .forma-inner { max-width: 1200px; margin: 0 auto; }
+    .forma-header { max-width: 580px; margin-bottom: 3.5rem; }
+    .forma-list { display: flex; flex-direction: column; gap: 0; }
+    .forma-item {
+      display: grid; grid-template-columns: 80px 1fr; gap: 2rem;
+      padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    .forma-item:last-child { border-bottom: none; }
+    .forma-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 900; color: var(--gold); opacity: 0.35; line-height: 1;
+      padding-top: 0.1rem;
+    }
+    .forma-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem;
+    }
+    .forma-content p { font-size: 0.88rem; color: var(--warm-grey); line-height: 1.8; }
+
+    /* CTA BOTTOM */
+    .qs-cta { background: var(--charcoal-dark); padding: 5rem 2.5rem; text-align: center; border-top: 1px solid var(--border); }
+    .qs-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem;
+    }
+    .qs-cta p { font-size: 0.95rem; color: rgba(255,255,255,0.45); margin-bottom: 2rem; }
+    .btn-primary {
+      background: var(--gold); color: var(--charcoal);
+      padding: 1rem 2.4rem; border-radius: 2px; border: none;
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-decoration: none; display: inline-block;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* FOOTER */
+    .footer { background: var(--charcoal-dark); border-top: 1px solid var(--border); padding: 2.5rem 2.5rem; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.25); margin-top: 0.3rem; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.78rem; color: rgba(255,255,255,0.38); text-decoration: none;
+      letter-spacing: 0.06em; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.22); text-align: right; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .historia-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .valores-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-copy { text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo">
+    <img src="logo/logo-full.jpg" alt="Kovacevic Constructora" class="logo-img">
+  </a>
+  <nav class="nav">
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#proyectos">Proyectos</a>
+    <a href="index.html#proceso">Proceso</a>
+    <a href="quienes-somos.html" class="active">Quiénes somos</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#contacto" class="btn-cta">Solicitar Cotización</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html#servicios" class="mlink">Servicios</a>
+  <a href="index.html#proyectos" class="mlink">Proyectos</a>
+  <a href="index.html#proceso" class="mlink">Proceso</a>
+  <a href="quienes-somos.html" class="mlink">Quiénes somos</a>
+  <a href="index.html#faq" class="mlink">FAQ</a>
+  <a href="index.html#contacto" class="mlink">Solicitar Cotización</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Nuestra historia</p>
+    <h1>Construimos con <em>propósito</em><br>desde hace más de 20 años</h1>
+    <p>Somos una empresa familiar chilena. Empezamos con proyectos pequeños y crecimos construyendo confianza en cada obra entregada en la Región Metropolitana.</p>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section class="historia">
+  <div class="historia-inner">
+    <div class="historia-text reveal">
+      <p class="section-eyebrow">Quiénes somos</p>
+      <h2 class="section-title">Una constructora con raíces y trayectoria</h2>
+      <p>Kovacevic Constructora nació en Santiago con la convicción de que construir bien no es solo levantar muros: es respetar el presupuesto, cumplir los plazos y entregar un espacio que dure décadas.</p>
+      <p>Hoy somos un equipo de maestros calificados, proyectistas y gestores de obra con experiencia en proyectos residenciales y comerciales de distinta escala. Desde la remodelación de un baño hasta la construcción de un edificio completo, aplicamos el mismo estándar de trabajo.</p>
+      <p>Operamos en toda la Región Metropolitana y nos enorgullece que la mayoría de nuestros clientes llegan por recomendación de alguien a quien ya le construimos.</p>
+    </div>
+    <div class="historia-aside reveal d1">
+      <div class="historia-stat-grid">
+        <div class="historia-stat">
+          <div class="historia-stat-num">20+</div>
+          <div class="historia-stat-label">Años en el rubro</div>
+        </div>
+        <div class="historia-stat">
+          <div class="historia-stat-num">300+</div>
+          <div class="historia-stat-label">Proyectos entregados</div>
+        </div>
+        <div class="historia-stat">
+          <div class="historia-stat-num">RM</div>
+          <div class="historia-stat-label">Cobertura completa</div>
+        </div>
+        <div class="historia-stat">
+          <div class="historia-stat-num">100%</div>
+          <div class="historia-stat-label">Garantía escrita</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="valores">
+  <div class="valores-inner">
+    <div class="valores-header reveal">
+      <p class="section-eyebrow">Nuestros valores</p>
+      <h2 class="section-title">Lo que nos define</h2>
+    </div>
+    <div class="valores-grid">
+
+      <div class="valor-card reveal">
+        <svg class="valor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+        <h3>Compromiso con el cliente</h3>
+        <p>Cada proyecto tiene un interlocutor directo. El cliente siempre sabe en qué etapa está su obra, sin intermediarios ni vaguedades.</p>
+      </div>
+
+      <div class="valor-card reveal d1">
+        <svg class="valor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <h3>Cumplimiento de plazos</h3>
+        <p>Firmamos cronogramas y los cumplimos. Si surge un imprevisto, lo comunicamos de inmediato con solución incluida.</p>
+      </div>
+
+      <div class="valor-card reveal d2">
+        <svg class="valor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <h3>Calidad sin atajos</h3>
+        <p>Usamos materiales de primera y mano de obra calificada. No bajamos estándares para reducir costos. Si hay presupuesto ajustado, rediseñamos el alcance antes de bajar la calidad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORMA DE TRABAJAR -->
+<section class="forma">
+  <div class="forma-inner">
+    <div class="forma-header reveal">
+      <p class="section-eyebrow">Cómo lo hacemos</p>
+      <h2 class="section-title">Nuestra forma de trabajar</h2>
+      <p class="section-desc">No somos una empresa de trámites. Somos constructores que gestionamos cada detalle del principio al fin.</p>
+    </div>
+    <div class="forma-list">
+      <div class="forma-item reveal">
+        <div class="forma-num">01</div>
+        <div class="forma-content">
+          <h3>Visita técnica gratuita</h3>
+          <p>Antes de cualquier número, visitamos el terreno o espacio. Entendemos el proyecto en terreno, no desde un formulario. Es gratis y sin compromiso.</p>
+        </div>
+      </div>
+      <div class="forma-item reveal">
+        <div class="forma-num">02</div>
+        <div class="forma-content">
+          <h3>Presupuesto transparente</h3>
+          <p>Entregamos un presupuesto desglosado ítem por ítem: materiales, mano de obra, maquinaria, imprevistos. Sin letra chica.</p>
+        </div>
+      </div>
+      <div class="forma-item reveal">
+        <div class="forma-num">03</div>
+        <div class="forma-content">
+          <h3>Ejecución con control de avance</h3>
+          <p>El cliente recibe reportes periódicos con fotos del avance. Puede visitar la obra cuando quiera. No hay sorpresas al momento de la entrega.</p>
+        </div>
+      </div>
+      <div class="forma-item reveal">
+        <div class="forma-num">04</div>
+        <div class="forma-content">
+          <h3>Entrega con garantía escrita</h3>
+          <p>Entregamos la obra con documentación completa, garantías por escrito y disponibilidad para resolver cualquier observación post entrega.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="qs-cta">
+  <h2>¿Tienes un proyecto en mente?</h2>
+  <p>Cuéntanos qué necesitas y coordinamos una visita técnica gratuita.</p>
+  <a href="index.html#contacto" class="btn-primary">Solicitar cotización gratuita</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <img src="logo/logo-full.jpg" alt="Kovacevic Constructora" style="height:52px; mix-blend-mode:screen;">
+      <p class="footer-sub" style="margin-top:0.4rem;">Empresa registrada en Chile &nbsp;·&nbsp; RUT 77.227.648-6</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#proyectos">Proyectos</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+    </div>
+    <div class="footer-copy">© 2024 Kovacevic Constructora<br>Santiago, Chile</div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+  });
+  document.querySelectorAll('.mlink').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

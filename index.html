@@ -34,7 +34,7 @@
         "description": "Constructora con más de 20 años de experiencia en Santiago de Chile. Especialistas en construcción de casas, remodelaciones, edificios, obra gruesa y terminaciones.",
         "url": "https://kovacevic.cl",
         "telephone": "+56953995657",
-        "email": "contacto@kovacevic.cl",
+        "email": "info@kovacevic.cl",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Santiago",
@@ -89,6 +89,12 @@
             "reviewBody": "Profesionalismo desde el primer día. Entregaron exactamente lo prometido."
           }
         ],
+        "taxID": "77.227.648-6",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "RUT",
+          "value": "77.227.648-6"
+        },
         "sameAs": ["https://kovacevic.cl"]
       },
       {
@@ -208,7 +214,7 @@
 
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('photo/hero.jpg');
+      background-image: url('photo/hero.webp');
       background-size: cover;
       background-position: center 40%;
     }
@@ -738,6 +744,90 @@
       .steps { grid-template-columns: 1fr; }
     }
 
+    /* ── BRANDS ──────────────────────────────────────────── */
+    .brands { background: var(--white); padding: 2.2rem 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .brands-inner { max-width: 1200px; margin: 0 auto; }
+    .brands-label {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--warm-grey); text-align: center; margin-bottom: 1.6rem;
+    }
+    .brands-grid {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .brand-item {
+      font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.06em; color: rgba(28,28,30,0.22);
+      padding: 0.5rem 1.1rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 2px;
+      text-transform: uppercase; transition: color 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .brand-item:hover { color: rgba(28,28,30,0.55); border-color: rgba(0,0,0,0.18); }
+
+    /* ── CALCULATOR LEAD CAPTURE ─────────────────────────── */
+    .calc-lead {
+      border-top: 1px solid var(--border); padding-top: 1.2rem; margin-top: 1.2rem;
+      display: none;
+    }
+    .calc-lead.visible { display: block; }
+    .calc-lead-title {
+      font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-bottom: 0.8rem; line-height: 1.5;
+    }
+    .calc-lead-row { display: flex; flex-direction: column; gap: 0.6rem; }
+    .calc-lead-input {
+      width: 100%; padding: 0.7rem 0.9rem;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+      color: var(--white); outline: none; transition: border-color 0.2s;
+    }
+    .calc-lead-input::placeholder { color: rgba(255,255,255,0.25); }
+    .calc-lead-input:focus { border-color: var(--gold); }
+    .calc-lead-btn {
+      background: var(--gold); color: var(--charcoal); border: none;
+      padding: 0.7rem 1.2rem; border-radius: 2px; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .calc-lead-btn:hover { background: var(--gold-light); }
+    .calc-lead-sent { font-size: 0.78rem; color: var(--gold); margin-top: 0.5rem; display: none; }
+
+    /* ── PRIVACY MODAL ───────────────────────────────────── */
+    .privacy-modal {
+      display: none; position: fixed; inset: 0; z-index: 3000;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 2rem;
+    }
+    .privacy-modal.open { display: flex; }
+    .privacy-box {
+      background: var(--white); max-width: 740px; width: 100%;
+      max-height: 88vh; overflow-y: auto; border-radius: 2px;
+      padding: 3rem; position: relative;
+    }
+    .privacy-close {
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      background: none; border: 1px solid rgba(0,0,0,0.15);
+      width: 36px; height: 36px; border-radius: 2px; cursor: pointer;
+      font-size: 1rem; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .privacy-close:hover { border-color: var(--charcoal); }
+    .privacy-box h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+      color: var(--charcoal); margin-bottom: 0.3rem;
+    }
+    .privacy-box .privacy-date {
+      font-size: 0.75rem; color: var(--warm-grey); margin-bottom: 2rem;
+    }
+    .privacy-box h3 {
+      font-size: 0.85rem; font-weight: 600; color: var(--charcoal);
+      margin: 1.6rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .privacy-box p, .privacy-box li {
+      font-size: 0.875rem; color: #555; line-height: 1.8;
+    }
+    .privacy-box ul { padding-left: 1.4rem; margin-top: 0.4rem; }
+    .privacy-box li { margin-bottom: 0.3rem; }
+
     /* ── PHONE LINKS ─────────────────────────────────────── */
     a.phone-link { color: inherit; text-decoration: none; transition: color 0.2s; }
     a.phone-link:hover { color: var(--gold); }
@@ -875,7 +965,7 @@
     <a href="#servicios">Servicios</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#proceso">Proceso</a>
-    <a href="#nosotros">Nosotros</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
     <a href="#faq">FAQ</a>
     <a href="#contacto" class="btn-cta">Solicitar Cotización</a>
   </nav>
@@ -889,7 +979,7 @@
   <a href="#servicios" class="mlink">Servicios</a>
   <a href="#proyectos" class="mlink">Proyectos</a>
   <a href="#proceso" class="mlink">Proceso</a>
-  <a href="#nosotros" class="mlink">Nosotros</a>
+  <a href="quienes-somos.html" class="mlink">Quiénes somos</a>
   <a href="#faq" class="mlink">FAQ</a>
   <a href="#contacto" class="mlink">Solicitar Cotización</a>
 </nav>
@@ -942,6 +1032,24 @@
     <div class="stat-item reveal d3">
       <div class="stat-num">RM</div>
       <div class="stat-label">Clientes en toda la región</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="brands-inner">
+    <p class="brands-label">Materiales y proveedores con los que trabajamos</p>
+    <div class="brands-grid">
+      <span class="brand-item">STO</span>
+      <span class="brand-item">Sodimac</span>
+      <span class="brand-item">Construmart</span>
+      <span class="brand-item">Imperial</span>
+      <span class="brand-item">BTicino</span>
+      <span class="brand-item">Cementos Bío Bío</span>
+      <span class="brand-item">Volcán</span>
+      <span class="brand-item">Fassa Bortolo</span>
+      <span class="brand-item">Masisa</span>
     </div>
   </div>
 </section>
@@ -1102,15 +1210,16 @@
         <div class="proj-info">
           <span class="proj-tag">Construcción</span>
           <h3 class="proj-name">Casa Tradicional</h3>
-          <span class="proj-count">5 fotografías</span>
+          <span class="proj-count">6 fotografías</span>
         </div>
       </div>
       <div class="project-grid">
-        <img src="photo/casa1/01.jpg" alt="Casa exterior" loading="lazy">
-        <img src="photo/casa1/02.jpg" alt="Vista frontal" loading="lazy">
-        <img src="photo/casa1/03.jpg" alt="Terraza y pérgola" loading="lazy">
-        <img src="photo/casa1/04.jpg" alt="Vista cordillera" loading="lazy">
-        <img src="photo/casa1/05.jpg" alt="Vista panorámica" loading="lazy">
+        <img src="photo/casa1/01.webp" alt="Casa exterior" loading="lazy">
+        <img src="photo/casa1/02.webp" alt="Vista frontal" loading="lazy">
+        <img src="photo/casa1/03.webp" alt="Terraza y pérgola" loading="lazy">
+        <img src="photo/casa1/04.webp" alt="Vista cordillera" loading="lazy">
+        <img src="photo/casa1/05.webp" alt="Vista panorámica" loading="lazy">
+        <img src="photo/casa1/06.webp" alt="Detalle exterior" loading="lazy">
       </div>
     </div>
 
@@ -1121,16 +1230,15 @@
         <div class="proj-info">
           <span class="proj-tag">Construcción · Terminaciones</span>
           <h3 class="proj-name">Casa Contemporánea</h3>
-          <span class="proj-count">6 fotografías</span>
+          <span class="proj-count">5 fotografías</span>
         </div>
       </div>
       <div class="project-grid">
-        <img src="photo/casa 2/01.jpg" alt="Fachada contemporánea" loading="lazy">
-        <img src="photo/casa 2/02.jpg" alt="Cocina moderna" loading="lazy">
-        <img src="photo/casa 2/03.jpg" alt="Cocina detalle" loading="lazy">
-        <img src="photo/casa 2/04.jpg" alt="Interior cocina" loading="lazy">
-        <img src="photo/casa 2/05.jpg" alt="Habitación" loading="lazy">
-        <img src="photo/casa 2/06.jpg" alt="Detalle interior" loading="lazy">
+        <img src="photo/casa 2/01.webp" alt="Fachada contemporánea" loading="lazy">
+        <img src="photo/casa 2/02.webp" alt="Cocina moderna" loading="lazy">
+        <img src="photo/casa 2/03.webp" alt="Cocina detalle" loading="lazy">
+        <img src="photo/casa 2/04.webp" alt="Interior cocina" loading="lazy">
+        <img src="photo/casa 2/05.webp" alt="Habitación" loading="lazy">
       </div>
     </div>
 
@@ -1337,10 +1445,19 @@
       </div>
       <div class="calc-result" id="calc-result">
         <p class="calc-result-label">Estimado orientativo</p>
-        <p class="calc-result-range" id="calc-range">$500.000 – $700.000 /m²</p>
+        <p class="calc-result-range" id="calc-range">24 – 32 UF/m²</p>
         <p class="calc-result-total" id="calc-total">Ingresa los m² para ver el total estimado</p>
-        <p class="calc-result-note">Los valores son referenciales y pueden variar según ubicación, acceso, especificaciones técnicas y condiciones del terreno. Solicita una visita técnica gratuita para un presupuesto preciso.</p>
-        <a href="#contacto" class="calc-cta">Solicitar cotización</a>
+        <p class="calc-result-note">Valores en UF, referenciales. Varían según ubicación, acceso y especificaciones técnicas. Cotización formal gratuita en visita técnica.</p>
+
+        <div class="calc-lead" id="calc-lead">
+          <p class="calc-lead-title">¿Quieres recibir este estimado con cotización formal?</p>
+          <div class="calc-lead-row">
+            <input class="calc-lead-input" type="text" id="cl-name" placeholder="Tu nombre">
+            <input class="calc-lead-input" type="tel" id="cl-phone" placeholder="+56 9 XXXX XXXX">
+            <button class="calc-lead-btn" id="cl-submit" type="button">Enviar</button>
+          </div>
+          <p class="calc-lead-sent" id="cl-sent">✓ Te contactaremos pronto</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1369,7 +1486,7 @@
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <p class="cdetail-text">contacto@kovacevic.cl</p>
+          <p class="cdetail-text">info@kovacevic.cl</p>
         </div>
         <div class="cdetail">
           <div class="cdetail-icon">
@@ -1433,19 +1550,74 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="logo/logo-full.jpg" alt="Kovacevic Constructora" style="height:52px; mix-blend-mode:screen;">
-      <p class="footer-sub" style="margin-top:0.4rem;">Empresa registrada en Chile &nbsp;·&nbsp; RUT XX.XXX.XXX-X</p>
+      <p class="footer-sub" style="margin-top:0.4rem;">Empresa registrada en Chile &nbsp;·&nbsp; RUT 77.227.648-6</p>
     </div>
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="#" id="open-privacy">Política de privacidad</a>
     </div>
     <div class="footer-copy">
       © 2024 Kovacevic Constructora<br>Santiago, Chile
     </div>
   </div>
 </footer>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="privacy-modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="privacy-box">
+    <button class="privacy-close" id="privacy-close" aria-label="Cerrar">✕</button>
+    <h2 id="privacy-title">Política de Privacidad</h2>
+    <p class="privacy-date">Última actualización: abril de 2026 · Kovacevic Constructora · RUT 77.227.648-6</p>
+
+    <h3>1. Responsable del tratamiento</h3>
+    <p>Kovacevic Constructora SpA, RUT 77.227.648-6, con domicilio en Santiago, Región Metropolitana, Chile. Contacto: contacto@kovacevic.cl / +56 9 5399 5657.</p>
+
+    <h3>2. Datos que recopilamos</h3>
+    <p>A través del formulario de contacto y la calculadora de presupuesto, podemos recopilar:</p>
+    <ul>
+      <li>Nombre completo</li>
+      <li>Número de teléfono</li>
+      <li>Correo electrónico</li>
+      <li>Descripción del proyecto y tipo de obra</li>
+    </ul>
+    <p>No recopilamos datos sensibles según lo definido por la Ley N° 19.628.</p>
+
+    <h3>3. Finalidad del tratamiento</h3>
+    <p>Los datos recopilados se utilizan exclusivamente para:</p>
+    <ul>
+      <li>Responder su solicitud de cotización o información</li>
+      <li>Enviar la propuesta técnica solicitada</li>
+      <li>Contacto comercial relacionado a su proyecto</li>
+    </ul>
+    <p>No compartimos ni cedemos sus datos a terceros sin su consentimiento, salvo obligación legal.</p>
+
+    <h3>4. Base legal</h3>
+    <p>El tratamiento se realiza con el consentimiento del titular, manifestado al completar y enviar el formulario de contacto, conforme al artículo 4° de la Ley N° 19.628 sobre Protección de la Vida Privada.</p>
+
+    <h3>5. Conservación de los datos</h3>
+    <p>Los datos se conservan durante el tiempo necesario para gestionar su solicitud y, si corresponde, durante la vigencia de la relación contractual. Transcurrido ese plazo, se eliminan de forma segura.</p>
+
+    <h3>6. Sus derechos</h3>
+    <p>Conforme a la Ley N° 19.628, usted tiene derecho a:</p>
+    <ul>
+      <li><strong>Acceso:</strong> solicitar qué datos tenemos sobre usted</li>
+      <li><strong>Rectificación:</strong> corregir datos inexactos</li>
+      <li><strong>Cancelación:</strong> solicitar la eliminación de sus datos</li>
+      <li><strong>Oposición:</strong> oponerse al tratamiento para fines de marketing</li>
+    </ul>
+    <p>Para ejercer estos derechos, escríbanos a contacto@kovacevic.cl indicando su nombre completo y la solicitud.</p>
+
+    <h3>7. Seguridad</h3>
+    <p>Adoptamos medidas técnicas y organizativas razonables para proteger sus datos frente a accesos no autorizados, pérdida o divulgación indebida.</p>
+
+    <h3>8. Modificaciones</h3>
+    <p>Podemos actualizar esta política cuando sea necesario. La versión vigente estará siempre disponible en este sitio web con la fecha de última actualización.</p>
+  </div>
+</div>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/56953995657?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20Kovacevic%20Constructora" class="wa-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
@@ -1509,7 +1681,7 @@
     submitBtn.textContent = 'Enviando...';
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/contacto@kovacevic.cl', {
+      const res = await fetch('https://formsubmit.co/ajax/info@kovacevic.cl', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
@@ -1591,19 +1763,20 @@
     });
   });
 
-  // Cost calculator
+  // Cost calculator (prices in UF/m²)
   const PRICES = {
-    'casa':          { basico: [350000, 450000], estandar: [500000, 700000], premium: [800000, 1200000] },
-    'remodelacion':  { basico: [200000, 300000], estandar: [350000, 500000], premium: [600000, 900000] },
-    'terminaciones': { basico: [100000, 150000], estandar: [180000, 280000], premium: [300000, 500000] },
-    'obra-gruesa':   { basico: [200000, 280000], estandar: [300000, 420000], premium: [450000, 650000] },
+    'casa':          { basico: [16, 22], estandar: [24, 32], premium: [35, 55] },
+    'remodelacion':  { basico: [6, 9],   estandar: [10, 16], premium: [18, 28] },
+    'terminaciones': { basico: [2.5, 4], estandar: [4.5, 8], premium: [9, 15]  },
+    'obra-gruesa':   { basico: [8, 12],  estandar: [13, 18], premium: [20, 30] },
   };
 
-  function fmtCLP(n) {
-    return '$' + Math.round(n).toLocaleString('es-CL');
+  function fmtUF(n) {
+    return n % 1 === 0 ? n.toLocaleString('es-CL') + ' UF' : n.toFixed(1) + ' UF';
   }
 
   let calcQuality = 'estandar';
+  let calcHasResult = false;
 
   document.querySelectorAll('.qbtn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1622,20 +1795,79 @@
     const m2 = parseFloat(document.getElementById('calc-m2').value);
     const rangeEl = document.getElementById('calc-range');
     const totalEl = document.getElementById('calc-total');
+    const leadEl = document.getElementById('calc-lead');
     const range = PRICES[type][calcQuality];
     const lo = range[0];
     const hi = range[1];
 
-    rangeEl.textContent = fmtCLP(lo) + ' – ' + fmtCLP(hi) + ' /m²';
+    rangeEl.textContent = fmtUF(lo) + ' – ' + fmtUF(hi) + ' /m²';
 
     if (m2 && m2 > 0) {
-      totalEl.textContent = 'Total estimado: ' + fmtCLP(lo * m2) + ' – ' + fmtCLP(hi * m2);
+      const tlo = lo * m2;
+      const thi = hi * m2;
+      totalEl.textContent = 'Total estimado: ' + fmtUF(Math.round(tlo)) + ' – ' + fmtUF(Math.round(thi));
+      leadEl.classList.add('visible');
+      calcHasResult = true;
     } else {
       totalEl.textContent = 'Ingresa los m² para ver el total estimado';
+      leadEl.classList.remove('visible');
+      calcHasResult = false;
     }
   }
 
   updateCalc();
+
+  // Calculator lead capture
+  document.getElementById('cl-submit').addEventListener('click', async () => {
+    const name = document.getElementById('cl-name').value.trim();
+    const phone = document.getElementById('cl-phone').value.trim();
+    if (!name || !phone) return;
+
+    const type = document.getElementById('calc-type').value;
+    const m2 = document.getElementById('calc-m2').value;
+    const range = document.getElementById('calc-range').textContent;
+    const total = document.getElementById('calc-total').textContent;
+
+    const btn = document.getElementById('cl-submit');
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    try {
+      await fetch('https://formsubmit.co/ajax/contacto@kovacevic.cl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Lead calculadora — Kovacevic Constructora',
+          nombre: name,
+          telefono: phone,
+          tipo_proyecto: type,
+          superficie_m2: m2,
+          estimado: range + ' · ' + total,
+        }),
+      });
+    } catch {}
+
+    document.getElementById('cl-sent').style.display = 'block';
+    btn.style.display = 'none';
+  });
+
+  // Privacy modal
+  const privacyModal = document.getElementById('privacy-modal');
+  document.getElementById('open-privacy').addEventListener('click', (e) => {
+    e.preventDefault();
+    privacyModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('privacy-close').addEventListener('click', () => {
+    privacyModal.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  privacyModal.addEventListener('click', (e) => {
+    if (e.target === privacyModal) {
+      privacyModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 </script>
 </body>
 </html>
