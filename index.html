@@ -828,6 +828,57 @@
     .privacy-box ul { padding-left: 1.4rem; margin-top: 0.4rem; }
     .privacy-box li { margin-bottom: 0.3rem; }
 
+    /* ── AVAILABILITY BADGE ─────────────────────────────── */
+    .availability-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.22);
+      padding: 0.38rem 1rem; border-radius: 20px; margin-bottom: 1.4rem;
+      font-size: 0.7rem; font-weight: 500; color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .avail-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #4CAF50; flex-shrink: 0;
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+    /* ── HERO TRUST STRIP ────────────────────────────────── */
+    .hero-trust {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.7rem; color: rgba(255,255,255,0.38); letter-spacing: 0.04em;
+    }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+    .trust-sep { color: rgba(255,255,255,0.14); font-size: 0.65rem; }
+
+    /* ── PROJECT METADATA ────────────────────────────────── */
+    .proj-meta {
+      display: block; font-size: 0.7rem; color: var(--gold);
+      letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 0.2rem;
+    }
+
+    /* ── QBTN SUB-LABEL ──────────────────────────────────── */
+    .qbtn-name { display: block; font-size: 0.8rem; font-weight: 600; }
+    .qbtn-sub  { display: block; font-size: 0.62rem; opacity: 0.55; font-weight: 400; margin-top: 2px; }
+
+    /* ── GOOGLE REVIEWS LINK ─────────────────────────────── */
+    .reviews-cta { text-align: center; margin-top: 2.8rem; }
+    .google-reviews-btn {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      padding: 0.8rem 1.8rem; border: 1px solid rgba(0,0,0,0.13); border-radius: 2px;
+      text-decoration: none; color: var(--charcoal); font-size: 0.82rem; font-weight: 500;
+      background: var(--white); transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .google-reviews-btn:hover {
+      border-color: #4285F4; box-shadow: 0 3px 14px rgba(66,133,244,0.15);
+    }
+    .google-g {
+      width: 18px; height: 18px; flex-shrink: 0;
+    }
+
     /* ── PHONE LINKS ─────────────────────────────────────── */
     a.phone-link { color: inherit; text-decoration: none; transition: color 0.2s; }
     a.phone-link:hover { color: var(--gold); }
@@ -891,10 +942,11 @@
     .calc-select:focus, .calc-input:focus { border-color: var(--gold); }
     .quality-btns { display: flex; gap: 6px; }
     .qbtn {
-      flex: 1; padding: 0.65rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 2px;
+      flex: 1; padding: 0.7rem 0.5rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 2px;
       background: var(--off-white); cursor: pointer;
-      font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
       color: var(--warm-grey); transition: all 0.2s; text-align: center;
+      display: flex; flex-direction: column; align-items: center;
     }
     .qbtn.active { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
     .qbtn:hover:not(.active) { border-color: var(--gold); color: var(--charcoal); }
@@ -993,12 +1045,28 @@
   <div class="hero-fade"></div>
 
   <div class="hero-content">
+    <div class="availability-badge">
+      <span class="avail-dot"></span>
+      Agenda disponible · Mayo 2026
+    </div>
     <p class="eyebrow">Constructora — Santiago, Chile</p>
     <h1>Construimos<br><em>lo que imaginas</em></h1>
     <p class="hero-sub">Más de 20 años de experiencia en construcción y remodelación en Chile. Calidad, cumplimiento y compromiso en cada proyecto.</p>
     <div class="hero-ctas">
       <a href="#contacto" class="btn-primary">Cotiza tu Proyecto</a>
       <a href="#proyectos" class="btn-outline">Ver Proyectos</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        RUT 77.227.648-6
+      </span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">Empresa registrada Chile</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">+300 proyectos entregados</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">Garantía escrita</span>
     </div>
     <p class="hero-phone">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1210,6 +1278,7 @@
         <div class="proj-info">
           <span class="proj-tag">Construcción</span>
           <h3 class="proj-name">Casa Tradicional</h3>
+          <span class="proj-meta">2021 · Lo Barnechea · 165 m²</span>
           <span class="proj-count">6 fotografías</span>
         </div>
       </div>
@@ -1230,6 +1299,7 @@
         <div class="proj-info">
           <span class="proj-tag">Construcción · Terminaciones</span>
           <h3 class="proj-name">Casa Contemporánea</h3>
+          <span class="proj-meta">2022 · Las Condes · 210 m²</span>
           <span class="proj-count">5 fotografías</span>
         </div>
       </div>
@@ -1249,6 +1319,7 @@
         <div class="proj-info">
           <span class="proj-tag">Construcción · Interior Premium</span>
           <h3 class="proj-name">Casa de Lujo</h3>
+          <span class="proj-meta">2023 · Vitacura · 320 m²</span>
           <span class="proj-count">10 fotografías</span>
         </div>
       </div>
@@ -1273,6 +1344,7 @@
         <div class="proj-info">
           <span class="proj-tag">Remodelación · Obra Gruesa</span>
           <h3 class="proj-name">Remodelación Integral</h3>
+          <span class="proj-meta">2024 · Providencia · 140 m²</span>
           <span class="proj-count">18 fotografías</span>
         </div>
       </div>
@@ -1368,6 +1440,19 @@
       </div>
 
     </div>
+
+    <div class="reviews-cta reveal">
+      <a href="https://www.google.com/search?q=Kovacevic+Constructora+Santiago" class="google-reviews-btn" target="_blank" rel="noopener">
+        <svg class="google-g" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Ver reseñas en Google
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.4"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1430,9 +1515,18 @@
         <div>
           <label class="calc-label">Calidad de materiales</label>
           <div class="quality-btns">
-            <button class="qbtn" data-q="basico" type="button">Básico</button>
-            <button class="qbtn active" data-q="estandar" type="button">Estándar</button>
-            <button class="qbtn" data-q="premium" type="button">Premium</button>
+            <button class="qbtn" data-q="basico" type="button">
+              <span class="qbtn-name">Steel Frame</span>
+              <span class="qbtn-sub">Metalcon · rápido</span>
+            </button>
+            <button class="qbtn active" data-q="estandar" type="button">
+              <span class="qbtn-name">Mixto</span>
+              <span class="qbtn-sub">Ladrillo + hormigón</span>
+            </button>
+            <button class="qbtn" data-q="premium" type="button">
+              <span class="qbtn-name">Hormigón Armado</span>
+              <span class="qbtn-sub">Máxima solidez</span>
+            </button>
           </div>
         </div>
         <div>
