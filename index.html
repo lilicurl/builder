@@ -745,24 +745,27 @@
     }
 
     /* ── BRANDS ──────────────────────────────────────────── */
-    .brands { background: var(--white); padding: 2.2rem 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .brands { background: var(--white); padding: 2.4rem 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
     .brands-inner { max-width: 1200px; margin: 0 auto; }
     .brands-label {
       font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--warm-grey); text-align: center; margin-bottom: 1.6rem;
+      color: var(--warm-grey); text-align: center; margin-bottom: 1.8rem;
     }
     .brands-grid {
       display: flex; align-items: center; justify-content: center;
-      gap: 1rem; flex-wrap: wrap;
+      gap: 2rem 2.8rem; flex-wrap: wrap;
     }
+    .brand-logo {
+      height: 32px; max-width: 110px; object-fit: contain; display: block;
+      filter: grayscale(100%) opacity(0.35); transition: filter 0.3s;
+    }
+    .brand-logo:hover { filter: grayscale(0%) opacity(0.88); }
     .brand-item {
       font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 0.06em; color: rgba(28,28,30,0.22);
-      padding: 0.5rem 1.1rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 2px;
-      text-transform: uppercase; transition: color 0.2s, border-color 0.2s;
-      cursor: default;
+      letter-spacing: 0.08em; color: rgba(28,28,30,0.22);
+      text-transform: uppercase; transition: color 0.2s; cursor: default;
     }
-    .brand-item:hover { color: rgba(28,28,30,0.55); border-color: rgba(0,0,0,0.18); }
+    .brand-item:hover { color: rgba(28,28,30,0.5); }
 
     /* ── CALCULATOR LEAD CAPTURE ─────────────────────────── */
     .calc-lead {
@@ -1109,15 +1112,15 @@
   <div class="brands-inner">
     <p class="brands-label">Materiales y proveedores con los que trabajamos</p>
     <div class="brands-grid">
-      <span class="brand-item">STO</span>
-      <span class="brand-item">Sodimac</span>
+      <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Logotipo_Sodimac.svg" alt="Sodimac" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'Sodimac'}))">
+      <img class="brand-logo" src="https://volcan.cl/wp-content/themes/volcan/img/logo-volcan-svg.svg" alt="Volcán" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'Volcán'}))">
+      <img class="brand-logo" src="https://cbb.cl/wp-content/uploads/2019/03/cbb.png" alt="Cementos Bío Bío" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'Cementos Bío Bío'}))">
+      <img class="brand-logo" src="https://www.masisa.com/hubfs/Sitio%20web%202024/imagenesdummy/logo-masisa.svg" alt="Masisa" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'Masisa'}))">
+      <img class="brand-logo" src="https://www.bticino.com/themes/custom/bticinocombase2026/images/logo-bticino.svg" alt="BTicino" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'BTicino'}))">
+      <img class="brand-logo" src="https://static.sto-net.com/logos/sto/logo-en.svg" alt="STO" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'STO'}))">
+      <img class="brand-logo" src="https://www.fassabortolo.com/image/layout_set_logo?img_id=600657&t=1776914402727" alt="Fassa Bortolo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-item',textContent:'Fassa Bortolo'}))">
       <span class="brand-item">Construmart</span>
       <span class="brand-item">Imperial</span>
-      <span class="brand-item">BTicino</span>
-      <span class="brand-item">Cementos Bío Bío</span>
-      <span class="brand-item">Volcán</span>
-      <span class="brand-item">Fassa Bortolo</span>
-      <span class="brand-item">Masisa</span>
     </div>
   </div>
 </section>
@@ -1342,9 +1345,9 @@
       <div class="project-meta">
         <span class="proj-num">04</span>
         <div class="proj-info">
-          <span class="proj-tag">Remodelación · Obra Gruesa</span>
-          <h3 class="proj-name">Remodelación Integral</h3>
-          <span class="proj-meta">2024 · Providencia · 140 m²</span>
+          <span class="proj-tag">Construcción · Obra Gruesa</span>
+          <h3 class="proj-name">Integral en proceso</h3>
+          <span class="proj-meta">2026 · Hacienda Chacabuco · 280 m²</span>
           <span class="proj-count">18 fotografías</span>
         </div>
       </div>
@@ -1413,12 +1416,12 @@
           <span class="star">★</span><span class="star">★</span>
           <span class="star">★</span><span class="star">★</span><span class="star">★</span>
         </div>
-        <p class="tcard-text">"Cumplieron todos los plazos acordados, algo que no es fácil de encontrar en la industria. La calidad de los materiales y el acabado final superaron mis expectativas."</p>
+        <p class="tcard-text">"Muy comprometidos con su trabajo, siempre dispuestos a ayudar"</p>
         <div class="tcard-author">
           <div class="avatar">PV</div>
           <div>
-            <p class="author-name">Patricia V.</p>
-            <p class="author-loc">Providencia, Santiago</p>
+            <p class="author-name">Liliana.</p>
+            <p class="author-loc">Hacienda Chacabuco, Colina</p>
           </div>
         </div>
       </div>
