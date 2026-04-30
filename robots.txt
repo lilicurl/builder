@@ -20,4 +20,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://kovacevic.cl/sitemap.xml
+Sitemap: https://kovac.cl/sitemap.xml
