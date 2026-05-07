@@ -527,70 +527,61 @@
     /* ── PORTFOLIO ───────────────────────────────────────── */
     .portfolio { background: var(--charcoal-dark); padding: 7rem 2.5rem; }
     .portfolio-inner { max-width: 1200px; margin: 0 auto; }
-    .portfolio-header {
-      display: flex; align-items: flex-end; justify-content: space-between;
-      margin-bottom: 4rem; gap: 2rem;
-    }
+    .portfolio-header { margin-bottom: 3rem; }
     .portfolio-header .section-title { color: var(--white); }
 
-    .project-block { margin-bottom: 5rem; }
-    .project-block:last-child { margin-bottom: 0; }
-
-    .project-meta {
-      display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.2rem;
-      padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);
+    .proj-grid-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
     }
-    .proj-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem; font-weight: 900; color: var(--gold);
-      opacity: 0.28; line-height: 1; flex-shrink: 0; margin-top: -0.1rem;
+    .proj-card {
+      position: relative; overflow: hidden;
+      aspect-ratio: 4/3; cursor: pointer; border-radius: 2px;
     }
-    .proj-info { flex: 1; }
-    .proj-tag {
-      font-size: 0.67rem; font-weight: 600; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem;
-    }
-    .proj-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem;
-    }
-    .proj-count { font-size: 0.76rem; color: rgba(255,255,255,0.3); letter-spacing: 0.04em; }
-
-    .project-grid {
-      position: relative; height: 480px;
-      overflow: hidden; cursor: pointer; border-radius: 2px;
-    }
-    .project-grid img {
-      display: none;
-    }
-    .project-grid img:first-child {
-      display: block;
-      width: 100%; height: 100%; object-fit: cover;
+    .proj-card img { display: none; }
+    .proj-card img:first-child {
+      display: block; width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.6s ease, filter 0.35s;
-      filter: brightness(0.88);
+      filter: brightness(0.72);
     }
-    .project-grid:hover img:first-child {
-      transform: scale(1.03); filter: brightness(0.65);
+    .proj-card:hover img:first-child {
+      transform: scale(1.06); filter: brightness(0.45);
     }
-    .gallery-overlay {
-      position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(transparent 40%, rgba(0,0,0,0.68));
-      display: flex; align-items: flex-end; padding: 1.8rem 2rem;
+    .proj-card-info {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.4rem 1.5rem;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,0.75));
       transition: background 0.35s;
     }
-    .project-grid:hover .gallery-overlay {
-      background: linear-gradient(transparent 20%, rgba(0,0,0,0.8));
+    .proj-card:hover .proj-card-info {
+      background: linear-gradient(transparent 10%, rgba(0,0,0,0.88));
     }
-    .gallery-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      color: var(--white); font-size: 0.82rem; font-weight: 600;
+    .proj-card-tag {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .proj-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--white);
+      line-height: 1.2; margin-bottom: 0.25rem;
+    }
+    .proj-card-meta {
+      font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 0.85rem;
+    }
+    .proj-card-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--white); font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.55); padding: 0.55rem 1.1rem;
-      border-radius: 2px; backdrop-filter: blur(4px);
-      background: rgba(255,255,255,0.08);
-      transition: border-color 0.25s, background 0.25s;
+      border: 1px solid rgba(255,255,255,0.45); padding: 0.42rem 0.9rem;
+      border-radius: 2px; background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(4px); width: fit-content;
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s, border-color 0.25s, color 0.25s, background 0.25s;
     }
-    .project-grid:hover .gallery-btn {
+    .proj-card:hover .proj-card-btn {
+      opacity: 1; transform: translateY(0);
       border-color: var(--gold); color: var(--gold);
       background: rgba(201,168,76,0.12);
     }
@@ -785,7 +776,7 @@
     /* ── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1100px) {
       .services-grid { grid-template-columns: repeat(2,1fr); }
-      .project-grid { height: 380px; }
+      .proj-grid-wrap { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -802,7 +793,7 @@
       .why-grid { grid-template-columns: 1fr; gap: 2rem; }
       .steps { grid-template-columns: repeat(2,1fr); gap: 2.5rem; }
       .steps::before { display: none; }
-      .project-grid { height: 260px; }
+      .proj-grid-wrap { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       .frow { grid-template-columns: 1fr; }
@@ -1348,80 +1339,53 @@
       </div>
     </div>
 
-    <!-- Proyecto 01 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">01</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa Tradicional</h3>
-          <span class="proj-meta">2021 · Lo Barnechea · 165 m²</span>
-          <span class="proj-count">6 fotografías</span>
-        </div>
-      </div>
-      <div class="project-grid">
+    <div class="proj-grid-wrap">
+
+      <div class="proj-card reveal">
         <img src="photo/casa1/01.webp" alt="Casa exterior" loading="lazy">
         <img src="photo/casa1/02.webp" alt="Vista frontal" loading="lazy">
         <img src="photo/casa1/03.webp" alt="Terraza y pérgola" loading="lazy">
         <img src="photo/casa1/04.webp" alt="Vista cordillera" loading="lazy">
         <img src="photo/casa1/05.webp" alt="Vista panorámica" loading="lazy">
         <img src="photo/casa1/06.webp" alt="Detalle exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 02 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">02</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción · Terminaciones</span>
-          <h3 class="proj-name">Casa Contemporánea</h3>
-          <span class="proj-meta">2022 · El Arrayán · 210 m²</span>
-          <span class="proj-count">5 fotografías</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa Tradicional</h3>
+          <p class="proj-card-meta">2021 · Lo Barnechea · 165 m²</p>
+          <span class="proj-card-btn">Ver galería · 6 fotos</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa2/01.webp" alt="Fachada contemporánea" loading="lazy">
         <img src="photo/casa2/02.webp" alt="Cocina moderna" loading="lazy">
         <img src="photo/casa2/03.webp" alt="Cocina detalle" loading="lazy">
         <img src="photo/casa2/04.webp" alt="Interior cocina" loading="lazy">
         <img src="photo/casa2/05.webp" alt="Habitación" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 03 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">03</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción · Interior Premium</span>
-          <h3 class="proj-name">Casa de Lujo</h3>
-          <span class="proj-meta">2023 · Chicureo · 320 m²</span>
-          <span class="proj-count">6 fotografías</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción · Terminaciones</p>
+          <h3 class="proj-card-name">Casa Contemporánea</h3>
+          <p class="proj-card-meta">2022 · El Arrayán · 210 m²</p>
+          <span class="proj-card-btn">Ver galería · 5 fotos</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa3/01.webp" alt="Interior" loading="lazy">
         <img src="photo/casa3/02.webp" alt="Interior detalle" loading="lazy">
         <img src="photo/casa3/03.webp" alt="Habitación" loading="lazy">
         <img src="photo/casa3/04.webp" alt="Dormitorio" loading="lazy">
         <img src="photo/casa3/05.webp" alt="Living" loading="lazy">
         <img src="photo/casa3/06.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 04 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">04</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción · Obra Gruesa</span>
-          <h3 class="proj-name">Integral en proceso</h3>
-          <span class="proj-meta">2026 · Hacienda Chacabuco · 280 m²</span>
-          <span class="proj-count">7 fotografías</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción · Interior Premium</p>
+          <h3 class="proj-card-name">Casa de Lujo</h3>
+          <p class="proj-card-meta">2023 · Chicureo · 320 m²</p>
+          <span class="proj-card-btn">Ver galería · 6 fotos</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa4/01.webp" alt="Obra en proceso" loading="lazy">
         <img src="photo/casa4/02.webp" alt="Interior" loading="lazy">
         <img src="photo/casa4/03.webp" alt="Detalle" loading="lazy">
@@ -1429,138 +1393,97 @@
         <img src="photo/casa4/05.webp" alt="Baño" loading="lazy">
         <img src="photo/casa4/06.webp" alt="Cocina" loading="lazy">
         <img src="photo/casa4/07.webp" alt="Terminación" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 05 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">05</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Colina</h3>
-          <span class="proj-meta">2021 · Colina · — m²</span>
-          <span class="proj-count">3 fotografías</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción · Obra Gruesa</p>
+          <h3 class="proj-card-name">Integral en proceso</h3>
+          <p class="proj-card-meta">2026 · Hacienda Chacabuco · 280 m²</p>
+          <span class="proj-card-btn">Ver galería · 7 fotos</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa5/01.webp" alt="Vista exterior" loading="lazy">
         <img src="photo/casa5/02.webp" alt="Interior" loading="lazy">
         <img src="photo/casa5/03.webp" alt="Detalle" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 06 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">06</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Hacienda Chacabuco</h3>
-          <span class="proj-meta">2022 · Hacienda Chacabuco · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Colina</h3>
+          <p class="proj-card-meta">2021 · Colina</p>
+          <span class="proj-card-btn">Ver galería · 3 fotos</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa6/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 07 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">07</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Colina</h3>
-          <span class="proj-meta">2022 · Colina · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Hacienda Chacabuco</h3>
+          <p class="proj-card-meta">2022 · Hacienda Chacabuco</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa7/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 08 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">08</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Chacabuco</h3>
-          <span class="proj-meta">2023 · Chacabuco · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Colina</h3>
+          <p class="proj-card-meta">2022 · Colina</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa8/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 09 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">09</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Colina</h3>
-          <span class="proj-meta">2023 · Colina · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Chacabuco</h3>
+          <p class="proj-card-meta">2023 · Chacabuco</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa9/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 10 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">10</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Hacienda Chacabuco</h3>
-          <span class="proj-meta">2024 · Hacienda Chacabuco · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Colina</h3>
+          <p class="proj-card-meta">2023 · Colina</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa10/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 11 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">11</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción</span>
-          <h3 class="proj-name">Casa en Colina</h3>
-          <span class="proj-meta">2025 · Colina · — m²</span>
-          <span class="proj-count">1 fotografía</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Hacienda Chacabuco</h3>
+          <p class="proj-card-meta">2024 · Hacienda Chacabuco</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa11/01.webp" alt="Vista exterior" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Proyecto 12 -->
-    <div class="project-block reveal">
-      <div class="project-meta">
-        <span class="proj-num">12</span>
-        <div class="proj-info">
-          <span class="proj-tag">Construcción · Obra en proceso</span>
-          <h3 class="proj-name">Casa en Chacabuco</h3>
-          <span class="proj-meta">2026 · Chacabuco · — m²</span>
-          <span class="proj-count">2 fotografías</span>
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción</p>
+          <h3 class="proj-card-name">Casa en Colina</h3>
+          <p class="proj-card-meta">2025 · Colina</p>
+          <span class="proj-card-btn">Ver foto</span>
         </div>
       </div>
-      <div class="project-grid">
+
+      <div class="proj-card reveal">
         <img src="photo/casa12/01.webp" alt="Vista exterior" loading="lazy">
         <img src="photo/casa12/02.webp" alt="Detalle" loading="lazy">
+        <div class="proj-card-info">
+          <p class="proj-card-tag">Construcción · En proceso</p>
+          <h3 class="proj-card-name">Casa en Chacabuco</h3>
+          <p class="proj-card-meta">2026 · Chacabuco</p>
+          <span class="proj-card-btn">Ver galería · 2 fotos</span>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -2042,23 +1965,10 @@
     if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbImages.length; showLbImage(); }
   });
 
-  // Wire up each project grid: cover photo + overlay button → lightbox
-  document.querySelectorAll('.project-grid').forEach(grid => {
-    const imgs = [...grid.querySelectorAll('img')];
-    const srcs = imgs.map(img => img.src);
-
-    const overlay = document.createElement('div');
-    overlay.className = 'gallery-overlay';
-    overlay.innerHTML = `<span class="gallery-btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l3-5h12l3 5"/>
-        <circle cx="12" cy="14" r="3"/>
-      </svg>
-      Ver galería · ${srcs.length} foto${srcs.length !== 1 ? 's' : ''}
-    </span>`;
-    grid.appendChild(overlay);
-
-    grid.addEventListener('click', () => openLightbox(srcs, 0));
+  // Wire up each project card → lightbox
+  document.querySelectorAll('.proj-card').forEach(card => {
+    const srcs = [...card.querySelectorAll('img')].map(img => img.src);
+    card.addEventListener('click', () => openLightbox(srcs, 0));
   });
 
   // Cost calculator (prices in UF/m²)
